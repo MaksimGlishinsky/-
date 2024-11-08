@@ -1,0 +1,45 @@
+using HorizonSideRobots
+
+
+include("Библиотека функций.jl")
+
+
+function vse_pole!(robot)
+    a = 0
+    b = 0
+    do_upora!(robot,Sud)
+    a += do_upora!(robot, Sud)
+    do_upora!(robot,West)
+    b += do_upora!(robot, West)
+    mark_raw!(robot, Ost)
+    move!(robot, Nord)
+    mark_raw!(robot, West)
+    move!(robot, Nord)
+    mark_raw!(robot, Ost)
+    move!(robot, Nord)
+    mark_raw!(robot, West)
+    move!(robot, Nord)
+    mark_raw!(robot, Ost)
+    move!(robot, Nord)
+    mark_raw!(robot, West)
+    move!(robot, Nord)
+    mark_raw!(robot, Ost)
+    move!(robot, Nord)
+    mark_raw!(robot, West)
+    move!(robot, Nord)
+    mark_raw!(robot, Ost)
+    move!(robot, Nord)
+    mark_raw!(robot, West)
+    move!(robot, Nord)
+    mark_raw!(robot, Ost)
+    do_upora!(robot, Sud)
+    do_upora!(robot, West)
+    move!(robot, Ost, a)
+    move!(robot, Nord, b)
+end
+
+
+function mark_raw!(robot, side)
+    putmarker!(robot)
+    mark_direct!(robot, side)
+end
