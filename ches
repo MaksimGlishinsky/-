@@ -1,0 +1,17 @@
+
+include("Vse_pole.jl")
+function ches!(robot)
+    do_upora!(robot, Sud)
+    do_upora!(robot, West)
+    markchess_direct!(robot, Ost)
+
+end
+function markchess_direct!(robot, side)
+    while !isborder(robot, side)
+        putmarker!(robot)
+        move!(robot, side)
+        if !isborder(robot, side)
+            move!(robot, side)
+        end
+    end
+end
